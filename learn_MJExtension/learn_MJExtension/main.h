@@ -17,8 +17,7 @@ void complex_Json2Model();
 void jsonArray2modelArray();
 
 //model -> json
-void simple_Model2Json();
-void complex_Model2Json();
+void model2json();
 void modelArray2jsonArray();
 
 void execute(void (*fn)(),NSString *comment);

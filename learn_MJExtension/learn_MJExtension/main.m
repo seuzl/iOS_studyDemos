@@ -13,6 +13,8 @@
 #import "StatusResult.h"
 #import "Status.h"
 #import "Ad.h"
+#import "Student.h"
+#import "Bag.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
@@ -20,6 +22,8 @@ int main(int argc, char * argv[]) {
         execute(simple_Json2Model,@"简单json->model");
         execute(complex_Json2Model, @"复杂json->model");
         execute(jsonArray2modelArray, @"json数组->model数组");
+        execute(model2json, @"model->json");
+        execute(modelArray2jsonArray, @"modelArray->jsonArray");
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
@@ -115,6 +119,59 @@ void jsonArray2modelArray(){
         NSLog(@"user.name=%@,user.icon=%@",user.name,user.icon);
     }
     
+}
+
+//modle->json
+void model2json(){
+    User *user = [[User alloc]init];
+    user.name = @"zhaolei";
+    user.icon = @"icon_zhaolei.png";
+    
+    Status *status = [[Status alloc]init];
+    status.user = user;
+    status.text = @"zhaolei de text";
+    
+    //model->json
+    NSDictionary* statusDict = [status mj_keyValues];//单个model->json由类的［实例变量］调用
+    NSLog(@"status=%@",statusDict);
+    NSLog(@"status.text=%@",status.text);
+    
+    //多级映射model
+    Student *stu = [[Student alloc] init];
+    stu.ID = @"123";
+    stu.oldName = @"rose";
+    stu.nowName = @"jack";
+    stu.desc = @"handsome";
+    stu.nameChangedTime = @"2018-09-08";
+    stu.books = @[@"Good book", @"Red book"];
+    
+    Bag *bag = [[Bag alloc]init];
+    bag.name = @"赵磊的书包";
+    bag.price = 205;
+    stu.bag = bag;
+    
+    NSDictionary *stuDict = [stu mj_keyValues];
+    NSLog(@"studict=%@",stuDict);
+    NSLog(@"stuDict with ignored keys:%@",[stuDict mj_keyValuesWithIgnoredKeys:@[@"bag",@"oldName"]]);
+    NSLog(@"stuDict 2 json string=%@",[stuDict mj_JSONString]);
+    
+}
+
+//modelArray -> jsonArray
+void modelArray2jsonArray(){
+    User *user1 = [[User alloc]init];
+    user1.name = @"zhaolei1";
+    user1.icon = @"icon_zhaolei1.png";
+    
+    User *user2 = [[User alloc]init];
+    user2.name = @"zhaolei2";
+    user2.icon = @"icon_zhaolei2.png";
+    
+    NSArray *userArray = @[user1,user2];
+    
+    //modelArray->jsonArray
+    NSArray *dictArray = [User mj_keyValuesArrayWithObjectArray:userArray];//model数组->json数组由［类］调用
+    NSLog(@"userDictArray=%@",dictArray);
 }
 
 void execute(void (*fn)(), NSString *comment)
