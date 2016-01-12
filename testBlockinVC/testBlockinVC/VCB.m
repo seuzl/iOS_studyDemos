@@ -1,30 +1,40 @@
+
 //
-//  ViewController.m
-//  learn_MJExtension
+//  VCB.m
+//  testBlockinVC
 //
-//  Created by 赵磊 on 15/12/20.
+//  Created by 赵磊 on 15/12/28.
 //  Copyright © 2015年 赵磊. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "VCB.h"
 
-@interface ViewController ()
+@interface VCB ()
 
 @end
 
-@implementation ViewController
+@implementation VCB
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.label.text = @"hello world.zhaolei";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+
+//    self.getTextBK(self.textField.text);
+//    [self.delegate setLabelText:self.textField.text];
+    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"setAlabel" object:self userInfo:@{@"name":self.textField.text}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"setAlabel" object:self.textField.text];
+}
+
 
 /*
 #pragma mark - Navigation

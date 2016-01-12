@@ -23,7 +23,7 @@ int main(int argc, char * argv[]) {
         execute(complex_Json2Model, @"复杂json->model");
         execute(jsonArray2modelArray, @"json数组->model数组");
         execute(model2json, @"model->json");
-        execute(modelArray2jsonArray, @"modelArray->jsonArray");
+    execute(modelArray2jsonArray, @"modelArray->jsonArray");
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
@@ -155,6 +155,7 @@ void model2json(){
     NSLog(@"stuDict with ignored keys:%@",[stuDict mj_keyValuesWithIgnoredKeys:@[@"bag",@"oldName"]]);
     NSLog(@"stuDict 2 json string=%@",[stuDict mj_JSONString]);
     
+
 }
 
 //modelArray -> jsonArray
@@ -180,3 +181,13 @@ void execute(void (*fn)(), NSString *comment)
     fn();
     MJExtensionLog(@"[******************%@******************结尾]\n ", comment);
 }
+
+// From here to end of file added by Injection Plugin //
+
+#ifdef DEBUG
+static char _inMainFilePath[] = __FILE__;
+static const char *_inIPAddresses[] = {"223.3.72.29", "127.0.0.1", 0};
+
+#define INJECTION_ENABLED
+#import "/tmp/injectionforxcode/BundleInjection.h"
+#endif

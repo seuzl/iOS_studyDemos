@@ -16,11 +16,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-y2-iPl">
+                                <rect key="frame" x="156" y="259" width="289" height="81"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.89431524276733398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="7HH-vO-EAX"/>
+                                    <constraint firstAttribute="width" constant="289" id="NmJ-AN-f0w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C4i-vr-tnT"/>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-84.5" id="CNL-26-cz4"/>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nzr-dQ-gqm"/>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R75-4g-Bok"/>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sxz-4Z-1Q3"/>
+                            <constraint firstItem="TSc-y2-iPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hdU-hb-tKm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="C4i-vr-tnT"/>
+                                <exclude reference="CNL-26-cz4"/>
+                                <exclude reference="Nzr-dQ-gqm"/>
+                                <exclude reference="hdU-hb-tKm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="TSc-y2-iPl" id="lA1-eo-hU9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="327" y="63"/>
         </scene>
     </scenes>
 </document>

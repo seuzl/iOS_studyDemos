@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 @class Box;
 
-@interface Book : NSObject
+   @interface Book : NSObject
 
-@property(copy,nonatomic) NSString *name;
-@property(copy,nonatomic) NSString *publisher;
-@property(strong,nonatomic) NSData *publishedTime;
-@property(strong,nonatomic) Box *box;
+
+@property (copy,nonatomic  ) NSString *name;
+@property (copy,nonatomic  ) NSString *publisher;
+@property (strong,nonatomic) NSData   *publishedTime;
+@property (strong,nonatomic) Box      *box;
 
 @end

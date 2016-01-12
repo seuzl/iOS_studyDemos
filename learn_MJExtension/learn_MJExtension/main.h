@@ -22,5 +22,4 @@ void modelArray2jsonArray();
 
 void execute(void (*fn)(),NSString *comment);
 
-
 #endif /* main_h */
