@@ -8,7 +8,19 @@
 
 #import "FFKApple.h"
 
+static NSString* name;
+
 @implementation FFKApple
+
++(void)setName:(NSString *)aname
+{
+    name = name;
+}
+
++(NSString*)name
+{
+    return name;
+}
 
 -(void)setColor:(NSString *)acolor andWeight:(double)aweight{
     self->color = acolor;
@@ -20,7 +32,7 @@
     self->color = acolor;
 }
 
--(NSString*)getColor
+-(NSString*)color
 {
     return self->color;
 }

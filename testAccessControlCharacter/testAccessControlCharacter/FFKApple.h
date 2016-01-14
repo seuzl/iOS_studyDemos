@@ -18,6 +18,10 @@
 
 -(void)setColor:(NSString*) color;
 
--(NSString*)getColor;
+-(NSString*)color;
+
++(void)setName:(NSString *)aname;
+
++(NSString*)name;
 
 @end

@@ -20,9 +20,12 @@ int main(int argc, const char * argv[]) {
         //color限制符package，可在frame内访问;weight限制符为默认（procted）,不可直接访问，只能通过get函数。可看到get函数被子类默认继承，可直接使用。
 //        NSLog(@"%@,%g",apple->color,[apple weight]);
         [apple setColor:@"yellow"];
-        [apple getColor];
+        [apple color];
         
-        NSLog(@"%@",[apple getColor]);
+        
+
+        
+        NSLog(@"%@",apple.color);
     }
     return 0;
 }
