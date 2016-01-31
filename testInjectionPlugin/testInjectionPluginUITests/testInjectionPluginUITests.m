@@ -1,18 +1,18 @@
 //
-//  testXcodePluginsUITests.m
-//  testXcodePluginsUITests
+//  testInjectionPluginUITests.m
+//  testInjectionPluginUITests
 //
-//  Created by 赵磊 on 15/12/18.
-//  Copyright © 2015年 赵磊. All rights reserved.
+//  Created by 赵磊 on 2016-01-31.
+//  Copyright © 2016 赵磊. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface testXcodePluginsUITests : XCTestCase
+@interface testInjectionPluginUITests : XCTestCase
 
 @end
 
-@implementation testXcodePluginsUITests
+@implementation testInjectionPluginUITests
 
 - (void)setUp {
     [super setUp];
